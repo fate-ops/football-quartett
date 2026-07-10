@@ -177,8 +177,88 @@
     left: 0;
     border-left-color: var(--border);
   }
+
   &::after {
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+.card {
+    width: 260px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
+    color: #f1f5f9;
+    font-family: system-ui, sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Spielfeld: die zwei Stapel nebeneinander, nimmt den Hauptplatz */
+.spielfeld {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+}
+
+/* Jeder Stapel: Karte oben, Button darunter, zentriert */
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Alle Karten: schmale Spalte rechts, scrollbar */
+.alle-karten {
+  width: 200px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Karten in der rechten Spalte kleiner machen */
+.alle-karten .card {
+  width: 160px;
+  padding: 10px;
+}
+
+.alle-karten .card h2 {
+  font-size: 0.95rem;
+}
+
+.alle-karten .card .stats p,
+.alle-karten .card .overall {
+  font-size: 0.7rem;
 }
